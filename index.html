@@ -29,25 +29,44 @@
     }
 
     #lander {
-      width: 60px;
-      height: 80px;
+      width: 40px;
+      height: 100px;
       position: absolute;
       bottom: 90%;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(to top, #444, #888);
-      border-radius: 20% 20% 40% 40%;
+      background: linear-gradient(to top, #555, #aaa);
+      clip-path: polygon(50% 0%, 100% 20%, 100% 100%, 0% 100%, 0% 20%);
       border: 2px solid #ccc;
       box-shadow: 0 0 10px rgba(255,255,255,0.3);
     }
 
-    #window {
-      width: 20px;
+    #lander::before,
+    #lander::after {
+      content: "";
+      position: absolute;
+      width: 12px;
       height: 20px;
+      background: #777;
+      bottom: 10px;
+    }
+
+    #lander::before {
+      left: -12px;
+      transform: skewY(-20deg);
+    }
+    #lander::after {
+      right: -12px;
+      transform: skewY(20deg);
+    }
+
+    #window {
+      width: 16px;
+      height: 16px;
       background: #0cf;
       border-radius: 50%;
       position: absolute;
-      top: 20px;
+      top: 25px;
       left: 50%;
       transform: translateX(-50%);
       box-shadow: 0 0 8px #0cf;
